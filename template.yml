@@ -40,7 +40,12 @@ parameters:
 
   - name: SUBPROJECT
     displayName: Subproject
-    description: Name of subdirectory in multi-project SBT builds.
+    description: Name subproject in multi-project SBT builds.
+    required: false
+
+  - name: SUBPROJECT_DIR
+    displayName: Subproject
+    description: Name of subproject directory in multi-project SBT builds (defaults to SUBPROJECT).
     required: false
 
 objects:
@@ -70,6 +75,8 @@ objects:
           env:
             - name: SBT_SUBPROJECT
               value: ${SUBPROJECT}
+            - name: SBT_SUBPROJECT_PATH
+              value: ${SUBPROJECT_PATH}
       output:
         to:
           kind: ImageStreamTag

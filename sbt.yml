@@ -18,14 +18,14 @@ spec:
       openshift.io/display-name: SBT
       openshift.io/provider-display-name: https://github.com/jw3/sbt-s2i
       sampleRepo: https://github.com/theiterators/akka-http-microservice
-      supports: sbt:2.12.7,java,scala
+      supports: sbt:2.12.8,java,scala
       tags: builder,java,scala
-      version: "2.12.7"
+      version: "2.12.8"
     from:
       kind: DockerImage
-      name: jwiii/sbt-s2i:1.2.3-2.12.7
+      name: mlangc/sbt-s2i:sbt-1.2.8-2.12.8-0.0.1
     generation: 1
     importPolicy: {}
-    name: "2.12.7"
+    name: "2.12.8"
     referencePolicy:
       type: Source
