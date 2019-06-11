@@ -9,8 +9,9 @@
 # https://superuser.com/a/38982 for find
 #
 
-readonly sbt_run_cmd="${SBT_SUBPROJECT:+${SBT_SUBPROJECT}/}run"
-readonly sbt_target_dir="${SBT_SUBPROJECT:+${SBT_SUBPROJECT}/}target"
+: ${SBT_SUBPROJECT_DIR:=$SBT_SUBPROJECT}
+readonly sbt_stage_cmd="${SBT_SUBPROJECT:+${SBT_SUBPROJECT}/}stage"
+readonly sbt_target_dir="${SBT_SUBPROJECT_DIR:+${SBT_SUBPROJECT_DIR}/}target"
 readonly staging_path="universal/stage/bin"
 
 readonly execable_count=$(find ${sbt_target_dir}/${staging_path} -executable -type f | wc -l)

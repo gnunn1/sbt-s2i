@@ -8,8 +8,10 @@
 #
 
 # SBT_SUBPROJECT provides multi project support
+
+: ${SBT_SUBPROJECT_DIR:=$SBT_SUBPROJECT}
 readonly sbt_stage_cmd="${SBT_SUBPROJECT:+${SBT_SUBPROJECT}/}stage"
-readonly sbt_target_dir="${SBT_SUBPROJECT:+${SBT_SUBPROJECT}/}target"
+readonly sbt_target_dir="${SBT_SUBPROJECT_DIR:+${SBT_SUBPROJECT_DIR}/}target"
 
 # If the 'sbt-s2i' assemble script is executed with the '-h' flag, print the usage.
 if [[ "$1" == "-h" ]]; then
